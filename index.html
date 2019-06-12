@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="theme-color" content="#000000">
+   <title >Quizetency</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.3/custom-elements-es5-adapter.js"></script>
+<script src="./mcqcomponent.js"></script>
+</head>
+ <body style="margin: 0px; padding: 0px; background-color: #fff; font-family: 'Open Sans','Helvetica Neue','Roboto','sans-serif';">
+   <noscript>
+     You need to enable JavaScript to run this app.
+   </noscript>
+   <div id="root"></div>
+   <base href="/" />
+   <mcq-cmp
+      title="question title should not be more then 800 charactors it ahouls inclues atleast 80 characters"
+      text='# Highlighting Code with Showdown
+Below we have a piece of JavaScript code:
+```javascript
+function sayHello (msg, who) {
+      return `${who} says: msg`;
+}
+sayHello("Hello World", "Johnny");
+```
+      '
+      hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a"
+      options='[
+      { key: 1, optionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" },
+      { key: 2, optionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" },
+      { key: 3, optionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" },
+      { key: 4, optionText: "None of the above" }
+    ]' ></mcq-cmp>
+   <script>
+   const button = document.querySelector('msq');
+   button.addEventListener('handleChange',(event)=>{
+     console.log("inside the evnet method call");
+     console.log(`Action created : ${event.detail}`);
+   });
+   setTimeout(()=>{
+     button.label = "second label"
+   },4000);
+   </script>
+ </body>
+</html>
